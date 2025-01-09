@@ -20,6 +20,7 @@ async function showMyCaptcha() {
   });
 }
 
+
 /**
  * Fonction principale pour gérer la soumission du formulaire et les appels API
  */
@@ -45,13 +46,11 @@ form.addEventListener("submit", async (e) => {
 
       if (response.status === 403) {
         listItem.textContent = `${i}. Forbidden`;
-      } else if (response.status === 429) {
+      } else if (response.status === 405) {
         // Captcha détecté
         alert("Captcha détecté. Veuillez résoudre le captcha pour continuer.");
-        await showMyCaptcha(); // Attendre que le Captcha soit résolu
-        i--; // Réessayer la même requête après la résolution du Captcha
-      }else if(response.status === 405){
-          listItem.textContent = `${i}. Forbidden`
+        await showMyCaptcha();
+        i--;
       }else {
         listItem.textContent = `${i}. Error`;
       }
