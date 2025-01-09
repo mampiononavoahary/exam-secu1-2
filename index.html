@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sequence Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="config.js" defer></script>
+  <script type="text/javascript" src="https://09bd26e5e726.eu-west-3.captcha-sdk.awswaf.com/09bd26e5e726/jsapi.js" defer></script>
+      
+    </script>
+  </head>
+  <body
+    class="bg-gray-100 flex flex-col items-center justify-center min-h-screen"
+  >
+    <div id="app" class="bg-white p-6 rounded shadow-lg">
+      <form id="form" class="flex flex-col gap-4">
+        <label for="number" class="text-lg font-semibold">
+          Enter a number (1 - 1000):
+        </label>
+        <input
+          id="number"
+          type="number"
+          min="1"
+          max="1000"
+          required
+          class="border border-gray-300 rounded px-3 py-2"
+        />
+        <button
+          type="submit"
+          class="bg-green-500 text-white py-2 rounded hover:bg-blue-600 transition"
+        >
+          Submit
+        </button>
+      </form>
+      <ul id="output" class="mt-4 text-gray-800"></ul>
+      <div id="my-captcha-container" class="mt-4"></div>
+    </div>
+
+  </body>
+</html>
